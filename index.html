@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="quix.css">
+    <link href='https://fonts.googleapis.com/css?family=Courgette' rel='stylesheet'>
+</head>
+<body>
+     <div id="preloader"></div>
+<div class="popup" id="popup">
+    <h4>Welcome to Random Trivia!</h4>
+    <h5>You have 10 seconds to answer each queation. Good luck!</h5>
+    <button class="start-btn" id="start-btn" onclick="watchStart()">Start Quiz</button>
+    <h6>Duration: 40s</h6>
+</div>
+<div class="app">
+    <div class="header"><h1>Simple Quiz</h1>
+  <img id="icon"src="moon.png">
+</div>
+    
+<div class="quiz">
+    <h2 id="question">Question goes here</h2>
+    <div id="answer-buttons">
+        <button class="btn">Answer 1</button>
+        <button class="btn">Answer 2</button>
+        <button class="btn">Answer 3</button>
+        <button class="btn">Answer 4</button>
+    </div>
+    <button id="next-btn">Next</button>
+    <button id="submitButton" class="submitButton" onclick="showScore(), handleNextButton() ">Submit</button>
+   
+    <div class="stopwatch"><h3 id="displayTime">00:00:00</h3></div> 
+</div>
+</div>
+<script src="quiz.js"></script>  
+
+<script>
+
+var icon = document.getElementById("icon");
+
+icon.onclick = function(){
+    document.body.classList.toggle("dark-theme");
+    if(document.body.classList.contains("dark-theme")){
+        icon.src = "sun.png"
+    }else{
+        icon.src = "moon.png"
+    }
+
+
+}
+</script>
+
+
+<script>
+
+var loader = document.getElementById("preloader");
+ window.addEventListener("load", function(){
+    loader.style.display = "none"
+})
+
+</script>
+
+<script>
+
+const closePopupButton = document.getElementById('start-btn');
+const popup = document.getElementById('popup');
+
+closePopupButton.addEventListener('click', () => {
+  popup.classList.add('hidden');
+  
+  //add a delay to remove display none, after the transition is complete.
+  setTimeout(()=>{
+      popup.style.display = 'none';
+      popup.classList.remove('hidden');
+      
+  }, 500);
+});
+</script>
+
+
+</body>
+</html>

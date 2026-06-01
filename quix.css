@@ -1,0 +1,220 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+:root{
+  /*  --primary-color: rgba(0,0,0);
+    --uppertext-color: rgba(161, 161, 240, 0.973);
+    --lowertext-color: rgb(255, 255, 255);
+*/
+    --primary-color: rgb(255, 255, 255);
+    --uppertext-color: #001e4d;
+    --lowertext-color: rgb(0, 0, 0);
+}
+.dark-theme {
+    --primary-color: rgba(0,0,0);
+    --uppertext-color: rgba(161, 161, 240, 0.973);
+    --lowertext-color: rgb(255, 255, 255);
+    
+}
+
+body {
+   /* background: #001e4d;   */
+    background: url('background3.jpg') no-repeat center center;
+    background-size: cover;
+    height: 90vh;
+    width: 90vw;
+    
+}
+
+h4{
+    font-size: 80px;
+    font-family: 'Courgette';
+    color: rgb(202, 170, 245);
+}
+
+h5{
+    font-size: 20px;
+    margin-top: 15%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #fff;
+
+}
+h6{
+    font-size: 16px;
+    color: white;
+}
+
+
+
+.app {
+   /* background: rgb(0, 0, 0);*/
+   background: var(--primary-color);
+    width: 90%;
+    max-width: 600px;
+    margin: 100px auto 0;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: #2d44a8 1px 2px 9px ;
+    
+    
+
+}
+.app h1 {
+    font-size: 25px;
+    /*color: rgba(161, 161, 240, 0.973);*/
+    color: var(--uppertext-color);
+    font-weight: 700;
+    border-bottom: 1px solid var(--lowertext-color);
+    padding-bottom: 30px;
+    
+}
+.quiz {
+    padding: 20px 0;
+}
+.quiz h2 {
+    font-size: 18px;
+    color:var(--lowertext-color);
+    
+    font-weight: 600;
+}
+.btn {
+    background: #1466eb;
+    background-image: linear-gradient(to right,rgb(32, 20, 199) , rgb(247, 0, 255));
+    color: #fff;
+    font-weight: 800;
+    width: 100%;
+    border: 0px solid #222;
+    padding: 10px;
+    margin: 10px 0;
+    text-align: left;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all .3s;
+    box-shadow: #273d9e 3px 3px 8px ;
+}
+.btn:hover:not([disabled]) {
+    background: #eca74c;
+    color: #fff;  
+}
+.btn:disabled {
+    cursor: no-drop;
+}
+#next-btn {
+    background: #001e4d ;
+    color: #fff;
+    width: 150px;
+    font-weight: 500;
+    border: 0;
+    padding: 10px;
+    margin: 10px auto 0;
+    border-radius: 4px;
+    cursor: pointer;
+    display: none;
+}
+.start-btn{
+    background: #001e4d ;
+    color: #fff;
+    width: 150px;
+    font-weight: 700;
+    border: 0;
+    padding: 10px;
+    margin: 20px auto 0;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+    margin-top: 80px;
+}
+.submitButton{
+    background: #001e4d ;
+    color: #fff;
+    width: 150px;
+    font-weight: 700;
+    border: 0;
+    padding: 10px;
+    margin: 20px auto 0;
+    border-radius: 4px;
+    cursor: pointer;
+    display: none;
+    margin-top: 10px;
+   
+}
+.correct {
+    background: #21e977;
+}
+.incorrect{
+    background: #dd2424;
+}
+
+#icon {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.header{
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    
+}
+#answer-buttons{
+    
+    margin-top: 20px;
+}
+#preloader {
+    background: #001e4d url("Loading.gif") no-repeat center center;
+    background-size: 10%;
+    height: 100%;
+    width: 100%;
+   position: fixed;
+    z-index: 100;
+    top: 0%;
+}
+div.stopwatch {
+    width: 85px;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: right;
+    justify-content: right;
+    margin-top: 13px;
+    background: rgb(13, 30, 177);
+    margin-left: 85%;
+    height: 30px;
+    border-radius: 6px;
+    box-shadow: #1c36ac 2px 2px 8px ;
+
+}
+.stopwatch h3{
+    margin: 5%;
+    background-size: 10px 10px;
+    color: #fff;
+}
+
+.popup {
+    /*background: var(--primary-color);*/
+    background: url("background.jpg" )no-repeat center center ;
+    background-size: cover;
+    width: 90%;
+    max-width: 600px;
+    margin: 10px auto 10px;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: #2d44a8 5px 10px 50px ;
+    position: fixed;
+    z-index: 1000;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    left: 0%;
+    opacity: 1;
+    transition: opacity .5s ease-in-out;
+}
+.popup.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
